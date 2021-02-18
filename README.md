@@ -20,3 +20,7 @@
 
 ## pbstream to rosmap
     rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=${HOME}/Downloads/mymap -pbstream_filename=${HOME}/Downloads/mymap.pbstream -resolution=0.05
+
+
+## ex demo
+    roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
