@@ -24,3 +24,11 @@
 
 ## ex demo
     roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
+
+## velodyne
+
+* ip 192.168.1.201
+
+    roslaunch velodyne_pointcloud VLP16_points.launch
+
+    rosrun rviz rviz -f velodyne
