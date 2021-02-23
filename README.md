@@ -7,7 +7,9 @@
 
 ## kevin 3d
     roslaunch velodyne_pointcloud VLP16_points.launch
-    
+
+    roslaunch vmu931 imu_plugin.launch
+
     roslaunch launch_start my_robot_3d.launch
 
 ## create map
