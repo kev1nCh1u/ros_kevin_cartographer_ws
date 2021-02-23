@@ -198,7 +198,7 @@ Visualization Manager:
       Name: Submaps
       Submap query service: /submap_query
       Topic: /submap_list
-      Tracking frame: base_link
+      Tracking frame: velodyne
       Unreliable: false
       Value: true
     - Alpha: 1
