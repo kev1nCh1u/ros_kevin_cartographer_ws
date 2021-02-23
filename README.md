@@ -1,9 +1,14 @@
 # ros_kevin_cartographer_ws
 
 
-## kevin
+## kevin 2d
     roslaunch urg_node urg_lidar.launch
     roslaunch launch_start my_robot_2d.launch
+
+## kevin 3d
+    roslaunch velodyne_pointcloud VLP16_points.launch
+    
+    roslaunch launch_start my_robot_3d.launch
 
 ## create map
     roslaunch launch_start hokuyo_2d.launch
@@ -32,3 +37,5 @@
     roslaunch velodyne_pointcloud VLP16_points.launch
 
     rosrun rviz rviz -f velodyne
+
+    rosrun rviz rviz -d /home/user/ros/kevin_cartographer_ws/src/vlp_20210223.rviz

@@ -2,7 +2,8 @@
 <!-- run velodyne_pointcloud/TransformNodelet in a nodelet manager for a VLP-16 -->
 
 <launch>
-
+  <remap from="velodyne_points" to="points2"/>
+  
   <!-- declare arguments with default values -->
   <arg name="calibration" default="$(find velodyne_pointcloud)/params/VLP16db.yaml"/>
   <arg name="device_ip" default="" />

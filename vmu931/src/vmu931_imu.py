@@ -196,7 +196,7 @@ def vmu_talker():
         # print(g_vmu_msg)
 
         g_imu_msg.header.stamp = rospy.Time.now()
-        g_imu_msg.header.frame_id = "base_link"
+        g_imu_msg.header.frame_id = "imu_link"
         g_imu_msg.orientation.x = quate_x
         g_imu_msg.orientation.y = quate_y
         g_imu_msg.orientation.z = quate_z
@@ -204,9 +204,9 @@ def vmu_talker():
         g_imu_msg.linear_acceleration.x = acc_x
         g_imu_msg.linear_acceleration.y = acc_y
         g_imu_msg.linear_acceleration.z = acc_z
-        g_imu_msg.angular_velocity.x = gyro_x
-        g_imu_msg.angular_velocity.y = gyro_y
-        g_imu_msg.angular_velocity.z = gyro_z
+        g_imu_msg.angular_velocity.x =    gyro_x
+        g_imu_msg.angular_velocity.y =    gyro_y
+        g_imu_msg.angular_velocity.z =    gyro_z
 
         pub.publish(g_imu_msg)
 

@@ -16,7 +16,9 @@
 
 <launch>
   <param name="robot_description"
-    textfile="$(find cartographer_ros)/urdf/backpack_3d.urdf" />
+    textfile="$(find launch_start)/configuration_files/my_robot_3d.urdf" />
+
+  <remap from="velodyne_points" to="points2"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
