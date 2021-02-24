@@ -29,6 +29,7 @@ g_imu_msg = Imu()
 def VmuAccelerometersFuc():
     
     while 1:
+        print('test')
         vmu_ser = np.zeros((50), dtype=np.int)
         loop = 0
         while 1:
@@ -55,7 +56,6 @@ def VmuAccelerometersFuc():
             vmu_x = struct.unpack('>f', bytearray(list(vmu_ser[7:11])))[0]
             vmu_y = struct.unpack('>f', bytearray(list(vmu_ser[11:15])))[0]
             vmu_z = struct.unpack('>f', bytearray(list(vmu_ser[15:19])))[0]
-            print('test')
             if(vmu_x != 0.0 and vmu_y != 0.0 and vmu_z != 0.0):
                 break
 
@@ -193,7 +193,7 @@ def vmu_talker():
         gyro_x, gyro_y, gyro_z = VmuGyroscopesFuc()
         print('gyro_x:%.4f gyro_y:%.4f gyro_z:%.4f'%(gyro_x, gyro_y, gyro_z))
         quate_w, quate_x, quate_y, quate_z = VmuQuaternionsFuc()
-        print('quate__w:%.4f quate__x:%.4f quate__y:%.4f quate__z:%.4f'%(quate__w, quate__x, quate__y, quate__z))
+        print('quate_w:%.4f quate_x:%.4f quate_y:%.4f quate_z:%.4f'%(quate_w, quate_x, quate_y, quate_z))
         euler_x, euler_y, euler_z = VmuEulerFuc()
         print('euler_x:%.4f euler_y:%.4f euler_z:%.4f'%(euler_x, euler_y, euler_z))
 
@@ -206,12 +206,12 @@ def vmu_talker():
         g_imu_msg.orientation.y = quate_y
         g_imu_msg.orientation.z = quate_z
         g_imu_msg.orientation.w = quate_w
-        g_imu_msg.linear_acceleration.x = 0#acc_x
-        g_imu_msg.linear_acceleration.y = 0#acc_y
-        g_imu_msg.linear_acceleration.z = 0#acc_z
-        g_imu_msg.angular_velocity.x =    0#gyro_x
-        g_imu_msg.angular_velocity.y =    0#gyro_y
-        g_imu_msg.angular_velocity.z =    0#gyro_z
+        g_imu_msg.linear_acceleration.x = acc_x
+        g_imu_msg.linear_acceleration.y = acc_y
+        g_imu_msg.linear_acceleration.z = acc_z
+        g_imu_msg.angular_velocity.x =    gyro_x
+        g_imu_msg.angular_velocity.y =    gyro_y
+        g_imu_msg.angular_velocity.z =    gyro_z
 
         pub.publish(g_imu_msg)
 
