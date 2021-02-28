@@ -17,7 +17,7 @@
     roslaunch launch_start hokuyo_2d.launch
 
 ## load map
-    roslaunch launch_start hokuyo_2d.launch
+    roslaunch launch_start tutorial.launch
 ## cartographer build
     catkin_make_isolated --install --use-ninja
     source devel_isolated/setup.bash
