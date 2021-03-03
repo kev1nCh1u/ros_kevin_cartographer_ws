@@ -75,49 +75,49 @@ options = {
 
 
 -- 文章二
---MAP_BUILDER.use_trajectory_builder_2d = true
--- MAP_BUILDER.use_trajectory_builder_3d = true  -- if i use 3d, must need a imu, so if you don't have imu, set 2d true
--- MAP_BUILDER.num_background_threads = 4
+-- MAP_BUILDER.use_trajectory_builder_2d = true
+MAP_BUILDER.use_trajectory_builder_3d = true  -- if i use 3d, must need a imu, so if you don't have imu, set 2d true
+MAP_BUILDER.num_background_threads = 4
 
--- TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 1
--- TRAJECTORY_BUILDER_3D.min_range = 0.2
--- TRAJECTORY_BUILDER_3D.max_range = 20.
--- TRAJECTORY_BUILDER_2D.min_z = 0.1
--- TRAJECTORY_BUILDER_2D.max_z = 1.0
--- TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = false
+TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 1
+TRAJECTORY_BUILDER_3D.min_range = 0.2
+TRAJECTORY_BUILDER_3D.max_range = 20.
+TRAJECTORY_BUILDER_2D.min_z = 0.1
+TRAJECTORY_BUILDER_2D.max_z = 1.0
+TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = false
 
--- POSE_GRAPH.optimization_problem.huber_scale = 5e2
--- POSE_GRAPH.optimize_every_n_nodes = 40
--- POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
--- POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 20
--- POSE_GRAPH.constraint_builder.min_score = 0.5
--- POSE_GRAPH.constraint_builder.global_localization_min_score = 0.55
+POSE_GRAPH.optimization_problem.huber_scale = 5e2
+POSE_GRAPH.optimize_every_n_nodes = 40
+POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
+POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 20
+POSE_GRAPH.constraint_builder.min_score = 0.5
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.55
 
 
--- POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e3
--- POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e3
+POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e3
+POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e3
 
 
 
 
 -- 文章二 2d
-MAP_BUILDER.use_trajectory_builder_2d = true
--- MAP_BUILDER.use_trajectory_builder_3d = true  -- if i use this there will not be map->odem only have base_link->velodyne
+-- MAP_BUILDER.use_trajectory_builder_2d = true
+-- -- MAP_BUILDER.use_trajectory_builder_3d = true  -- if i use this there will not be map->odem only have base_link->velodyne
 
-MAP_BUILDER.num_background_threads = 7
+-- MAP_BUILDER.num_background_threads = 7
 
-TRAJECTORY_BUILDER_2D.submaps.num_range_data = 35
-TRAJECTORY_BUILDER_2D.min_range = 0.3
-TRAJECTORY_BUILDER_2D.max_range = 8.
-TRAJECTORY_BUILDER_2D.missing_data_ray_length = 1.
-TRAJECTORY_BUILDER_2D.use_imu_data = false
-TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
-TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.1
-TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 10.
-TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 1e-1
+-- TRAJECTORY_BUILDER_2D.submaps.num_range_data = 35
+-- TRAJECTORY_BUILDER_2D.min_range = 0.3
+-- TRAJECTORY_BUILDER_2D.max_range = 8.
+-- TRAJECTORY_BUILDER_2D.missing_data_ray_length = 1.
+-- TRAJECTORY_BUILDER_2D.use_imu_data = false
+-- TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.1
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 10.
+-- TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 1e-1
 
-POSE_GRAPH.optimization_problem.huber_scale = 1e2
-POSE_GRAPH.optimize_every_n_nodes = 35
-POSE_GRAPH.constraint_builder.min_score = 0.65
+-- POSE_GRAPH.optimization_problem.huber_scale = 1e2
+-- POSE_GRAPH.optimize_every_n_nodes = 35
+-- POSE_GRAPH.constraint_builder.min_score = 0.65
 
 return options
