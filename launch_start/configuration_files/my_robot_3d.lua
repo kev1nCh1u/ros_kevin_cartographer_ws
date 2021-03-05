@@ -77,26 +77,30 @@ options = {
 -- 文章二
 -- MAP_BUILDER.use_trajectory_builder_2d = true
 MAP_BUILDER.use_trajectory_builder_3d = true  -- if i use 3d, must need a imu, so if you don't have imu, set 2d true
-MAP_BUILDER.num_background_threads = 4
+MAP_BUILDER.num_background_threads = 7
 
 TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 1
 TRAJECTORY_BUILDER_3D.min_range = 0.2
 TRAJECTORY_BUILDER_3D.max_range = 20.
-TRAJECTORY_BUILDER_2D.min_z = 0.1
-TRAJECTORY_BUILDER_2D.max_z = 1.0
-TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = false
+-- TRAJECTORY_BUILDER_2D.min_z = 0.1
+-- TRAJECTORY_BUILDER_2D.max_z = 1.0
+-- TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = false
 
 POSE_GRAPH.optimization_problem.huber_scale = 5e2
-POSE_GRAPH.optimize_every_n_nodes = 40
+POSE_GRAPH.optimize_every_n_nodes = 320
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
-POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 20
-POSE_GRAPH.constraint_builder.min_score = 0.5
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.55
+POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
+POSE_GRAPH.constraint_builder.min_score = 0.62
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
 
 
-POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e3
-POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e3
+-- POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e3
+-- POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e3
 
+-- TRAJECTORY_BUILDER_3D.imu_gravity_time_constant = 1
+TRAJECTORY_BUILDER_3D.scans_per_accumulation = 1
+SPARSE_POSE_GRAPH.optimize_every_n_scans = 0
+TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
 
 
 
