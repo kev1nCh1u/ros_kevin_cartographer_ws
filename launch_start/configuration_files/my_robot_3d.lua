@@ -97,10 +97,6 @@ POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
 -- POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e3
 -- POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e3
 
--- TRAJECTORY_BUILDER_3D.imu_gravity_time_constant = 1
-TRAJECTORY_BUILDER_3D.scans_per_accumulation = 1
-SPARSE_POSE_GRAPH.optimize_every_n_scans = 0
-TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
 
 
 
