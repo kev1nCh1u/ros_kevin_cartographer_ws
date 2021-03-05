@@ -9,6 +9,7 @@
     roslaunch velodyne_pointcloud VLP16_points.launch
 
     roslaunch vmu931 vmu_read_all.launch
+    roslaunch imu_launch imu_msg.launch 
 
     roslaunch launch_start my_robot_3d.launch
 

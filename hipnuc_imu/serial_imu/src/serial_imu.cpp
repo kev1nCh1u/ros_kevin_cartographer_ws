@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 	ros::init(argc, argv, "serial_imu");
 	ros::NodeHandle n;
 
-	ros::Publisher IMU_pub = n.advertise<sensor_msgs::Imu>("/IMU_data", 20);
+	ros::Publisher IMU_pub = n.advertise<sensor_msgs::Imu>("/imu", 20);
 	ros::Publisher Imu_0x91_pub = n.advertise<serial_imu::Imu_0x91_msg>("/imu_0x91_package", 10);
 
 	serial::Serial sp;
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 					packet_decode(buffer[i]);
 
 				imu_data.header.stamp = ros::Time::now();
-				imu_data.header.frame_id = "base_link";
+				imu_data.header.frame_id = "imu_link";
 
 				imu_0x91_msg.header.stamp = ros::Time::now();
 				imu_0x91_msg.header.frame_id = "base_0x91_link";
