@@ -32,6 +32,12 @@
 ## ply point cloud
 http://lidarview.com/
 
+    roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=${HOME}/Downloads/b3-2016-02-02-13-32-01.bag
+
+    roslaunch launch_start assets_writer_backpack_3d.launch \
+    bag_filenames:=${HOME}/Downloads/b3-2016-02-02-13-32-01.bag \
+    pose_graph_filename:=${HOME}/Downloads/b3-2016-02-02-13-32-01.bag.pbstream
+
 ## ex demo
     roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
 
