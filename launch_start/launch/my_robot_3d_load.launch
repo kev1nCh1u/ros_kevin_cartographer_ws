@@ -27,7 +27,7 @@
       type="cartographer_node" args="
           -configuration_directory $(find launch_start)/configuration_files
           -configuration_basename my_robot_3d_load.lua
-          -load_state_filename /home/user/Downloads/mymap.pbstream"
+          -load_state_filename /home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pbstream"
       output="screen">
     <remap from="points2_1" to="horizontal_laser_3d" />
     <remap from="points2_2" to="vertical_laser_3d" />
