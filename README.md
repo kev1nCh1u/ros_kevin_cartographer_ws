@@ -8,7 +8,7 @@
 ## kevin 3d
     roslaunch velodyne_pointcloud VLP16_points.launch
 
-    roslaunch vmu931 vmu_read_all.launch
+    roslaunch kevin_vmu931 imu_read_all.launch
     roslaunch imu_launch imu_msg.launch 
 
     roslaunch launch_start my_robot_3d.launch
@@ -24,11 +24,13 @@
 ## 存地圖指令
     rosservice call /finish_trajectory 0
 
-    rosservice call /write_state "{filename: '${HOME}/Downloads/mymap.pbstream'}"
+    rosservice call /write_state "{filename: '/home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pbstream'}"
 
 ## pbstream to rosmap
-    rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=${HOME}/Downloads/mymap -pbstream_filename=${HOME}/Downloads/mymap.pbstream -resolution=0.05
+    rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=/home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap -pbstream_filename=/home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pbstream -resolution=0.05
 
+## ply point cloud
+http://lidarview.com/
 
 ## ex demo
     roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
