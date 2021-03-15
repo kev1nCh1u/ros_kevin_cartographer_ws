@@ -40,6 +40,10 @@ http://lidarview.com/
     bag_filenames:=${HOME}/Downloads/b3-2016-02-02-13-32-01.bag \
     pose_graph_filename:=${HOME}/Downloads/b3-2016-02-02-13-32-01.bag.pbstream
 
+    roslaunch launch_start assets_writer_backpack_3d.launch \
+    bag_filenames:=/home/user/ros/kevin_cartographer_ws/2021-03-15-18-23-49.bag \
+    pose_graph_filename:=/home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pbstream
+
 ## ex demo
     roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
 

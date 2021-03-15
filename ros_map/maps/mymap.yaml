@@ -1,0 +1,6 @@
+image: /home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pgm
+resolution: 0.050000
+origin: [-19.650000, -13.950000, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

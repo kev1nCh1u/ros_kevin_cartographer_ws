@@ -40,15 +40,6 @@ options = {
   fixed_frame_pose_sampling_ratio = 1.,
   imu_sampling_ratio = 1.,
   landmarks_sampling_ratio = 1.,
-  -- pipeline = {
-  --   -- We also write a PLY file at this stage, because gray points look good.
-  --   -- The points in the PLY can be visualized using
-  --   -- https://github.com/cartographer-project/point_cloud_viewer.
-  --   {
-  --     action = "write_ply",
-  --     filename = "points.ply",
-  --   }
-  -- }
 }
 
 
