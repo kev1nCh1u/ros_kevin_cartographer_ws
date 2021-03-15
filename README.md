@@ -18,6 +18,8 @@
 
 ## load map
     roslaunch launch_start tutorial.launch
+
+    roslaunch launch_start my_robot_3d_load.launch
 ## cartographer build
     catkin_make_isolated --install --use-ninja
     source devel_isolated/setup.bash
