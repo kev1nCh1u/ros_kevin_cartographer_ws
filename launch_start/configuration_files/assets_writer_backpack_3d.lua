@@ -27,6 +27,10 @@ options = {
     {
       action = "dump_num_points",
     },
+    {
+      action = "fixed_ratio_sampler",
+      sampling_ratio = 0.01,
+    },
 
     -- Gray X-Rays. These only use geometry to color pixels.
     {
@@ -51,42 +55,42 @@ options = {
     -- Now we recolor our points by frame and write another batch of X-Rays. It
     -- is visible in them what was seen by the horizontal and the vertical
     -- laser.
-    {
-      action = "color_points",
-      frame_id = "horizontal_vlp16_link",
-      color = { 255., 0., 0. },
-    },
-    {
-      action = "color_points",
-      frame_id = "vertical_vlp16_link",
-      color = { 0., 255., 0. },
-    },
+    -- {
+    --   action = "color_points",
+    --   frame_id = "horizontal_vlp16_link",
+    --   color = { 255., 0., 0. },
+    -- },
+    -- {
+    --   action = "color_points",
+    --   frame_id = "velodyne",
+    --   color = { 255., 0., 0. },
+    -- },
 
-    {
-      action = "write_xray_image",
-      voxel_size = VOXEL_SIZE,
-      filename = "xray_yz_all_color",
-      transform = YZ_TRANSFORM,
-    },
-    {
-      action = "write_xray_image",
-      voxel_size = VOXEL_SIZE,
-      filename = "xray_xy_all_color",
-      transform = XY_TRANSFORM,
-    },
-    {
-      action = "write_xray_image",
-      voxel_size = VOXEL_SIZE,
-      filename = "xray_xz_all_color",
-      transform = XZ_TRANSFORM,
-    },
+    -- {
+    --   action = "write_xray_image",
+    --   voxel_size = VOXEL_SIZE,
+    --   filename = "xray_yz_all_color",
+    --   transform = YZ_TRANSFORM,
+    -- },
+    -- {
+    --   action = "write_xray_image",
+    --   voxel_size = VOXEL_SIZE,
+    --   filename = "xray_xy_all_color",
+    --   transform = XY_TRANSFORM,
+    -- },
+    -- {
+    --   action = "write_xray_image",
+    --   voxel_size = VOXEL_SIZE,
+    --   filename = "xray_xz_all_color",
+    --   transform = XZ_TRANSFORM,
+    -- },
     -- We also write a PLY file at this stage, because gray points look good.
     -- The points in the PLY can be visualized using
     -- https://github.com/cartographer-project/point_cloud_viewer.
     {
       action = "write_ply",
       filename = "points.ply",
-    }
+    },
   }
 }
 
