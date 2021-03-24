@@ -44,12 +44,17 @@ http://lidarview.com/
     bag_filenames:=/home/user/ros/kevin_cartographer_ws/2021-03-15-18-23-49.bag \
     pose_graph_filename:=/home/user/ros/kevin_cartographer_ws/src/ros_map/maps/mymap.pbstream
 
-## ex demo
+    rosrun kevin_ply ply_publisher
+
+## offline
     roslaunch cartographer_ros offline_backpack_3d.launch bag_filenames:=/home/user/rosbags/cartographer/b3-2016-04-05-13-54-42.bag
 
+offline create map
+
+    roslaunch launch_start offline_backpack_3d.launch bag_filenames:=/home/user/ros/kevin_cartographer_ws/2021-03-15-18-23-49.bag
 ## velodyne
 
-### ip 192.168.1.201
+    ip 192.168.1.201
 
     roslaunch velodyne_pointcloud VLP16_points.launch
 
